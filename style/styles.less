@@ -98,15 +98,21 @@ div#demo{
 }
 
 div#header{
-	.FredokaOneFont(@focusColor, 2.5em);
 	.Center();
 	background: @charcoal;
+
+	img{
+		height: 4em;
+		padding: 1em;
+	}
+
 }
 
 div#userForm{
 	
 	.Center();
 	padding: 1em;
+	background: url('blueDiagmonds.png');
 
 	input{
 		background: transparent;
@@ -132,11 +138,12 @@ div#mapContainer{
 }
 
 div#footer{
-	background: @darkTone;
+	background: url('blueDiagmonds.png');
 	.Center();
 	.FullWidth();
 	.NewsCycleFont(white, 1em);
-	border-top: 2em solid @focusColor;
+	padding: 1em 0;
+	border-bottom: 1em solid @charcoal;
 }
 
 /*--------------------------------------------*/
@@ -238,8 +245,8 @@ div#wood{
     .NewsCycleFont(@focusColor, 1.25em);
 }
 
-@scrollBar: @darkTone;
-@scrollBarBack: @focusColor;
+@scrollBar: @focusColor;
+@scrollBarBack: @charcoal;
 
 ::-webkit-scrollbar{
 	width: 10px;
