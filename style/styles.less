@@ -114,6 +114,7 @@ div#userForm{
 		.NewsCycleFont(white, 1.25em);
 		padding: 0 1em;
 		margin: 0.5em;
+		.PlaceHolder(@charcoal);
 	}
 
 }
@@ -161,6 +162,13 @@ p{
 /*--------------------------------------------*/
 /*---> FORMS <--------------------------------*/
 /*--------------------------------------------*/
+
+.PlaceHolder(@color: #ccc) {
+	input::-webkit-input-placeholder { color: @color; }
+	input:-moz-placeholder { color: @color; }
+	textarea::-webkit-input-placeholder { color: @color; }
+	textarea:-moz-placeholder { color: @color; }
+}
 
 .FormCleanse(){
 	outline: none;
