@@ -12,6 +12,7 @@
 	<!-- Google Fonts Here -->
 	<link rel="icon" type="img/png" href="style/favicon.png" style="width:30px;">
 	<!-- Need to Change Favicon -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
 	<style>
 
 
@@ -21,10 +22,29 @@
 
 <body>
 
+	<div id="user-list"></div>
 
 
 	<script type="text/javascript">
 
+		//var imgPath = 'urlhere';
+
+		$(document).ready(function(){
+			$(function listData(){
+				$.getJSON(
+					url,
+					function(data){
+						$('div#user-list').append('<ul class="users"></ul>');
+						$.each(data.feed.entry, function(i, entry){
+							var user = '<span style="display: none;">' + entry.id.$t + '</span>';
+							//user += '<img src="' + imgPath + entry.gsx$isbn.$t + '-0.jpg">';
+							user += entry.title.$t;
+							user += '<br>' + entry.location.$t;
+							$('.users').append('<li>' + item + '</li>');
+						});
+					});
+			});
+		});
 	
 
 	</script>
