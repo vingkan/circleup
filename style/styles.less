@@ -102,8 +102,8 @@ div#header{
 	background: @charcoal;
 
 	img{
-		height: 4em;
-		padding: 1em;
+		height: 6em;
+		padding: 1.5em;
 	}
 
 }
@@ -264,10 +264,11 @@ div#wood{
 
 @scrollBar: @focusColor;
 @scrollBarBack: @charcoal;
+@size: 20px;
 
 ::-webkit-scrollbar{
-	width: 10px;
-	height: 10px;
+	width: @size;
+	height: @size;
 	background: @scrollBarBack;
 }
 
@@ -288,11 +289,29 @@ div#wood{
 }
 
 ::-webkit-scrollbar-corner{
-	width: 10px;
-	height: 10px;
+	width: @size;
+	height: @size;
 	background: @scrollBarBack;
 }
 
 ::-webkit-resizer{
 	background: @scrollBarBack;
+}
+
+@placeholderColor: rgba(255, 255, 255, 0.75);
+
+::-webkit-input-placeholder {
+   color: @placeholderColor;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: @placeholderColor;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: @placeholderColor;  
+}
+
+:-ms-input-placeholder {  
+   color: @placeholderColor;  
 }
