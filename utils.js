@@ -52,6 +52,7 @@ function submitOne(){
 }
 
 function submitTwo(){
+	submitOne();
 	setInterval(function () {toggle()}, 300);
 	var submitButton = document.getElementById('ss-submit');
 		submitButton.click();
@@ -67,6 +68,9 @@ function toggle(){
 	}
 }
 
+/*
+* StackOverflow Link: http://stackoverflow.com/questions/391979/get-client-ip-using-just-javascript
+*/
 function getDeviceIP() {
     if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
     else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
