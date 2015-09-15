@@ -24,18 +24,13 @@
 
 	<div id="demo">Error</div>
 
-	<div id="user-list" style="display: none;"></div>
-
-	<textarea id ="dataIn" style="display:none;width:400px;height:200px;"></textarea>
-	<textarea id ="userKeys" style="display:none;width:400px;height:200px;"></textarea>
-
 	<div id="header">
 		<img src="style/logo.png">
 	</div>
 
 	<div id="userForm">
 
-		<p>Make finding your friends easier (and more fun) than ever.</p>
+		<p>Get User IP Address Test</p>
 
 	</div>
 
@@ -61,6 +56,9 @@
 
 		    return false;
 		}
+
+		var userForm = document.getElementById('userForm');
+		userForm.innerHTML = '<p>' + myIP() + '</p>';
 
 	</script>
 
