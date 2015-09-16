@@ -42,7 +42,15 @@ function initialize(){
     };
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
+    var oms = new OverlappingMarkerSpiderfier(map);
     var infowindow = new google.maps.InfoWindow();
+    oms.addListener('click', function(marker, event){
+        infowindow.setContent(marker.desc);
+        infowindow.open(map, marker);
+    });
+    oms.addListener('spiderfy', function(markers){
+        infowindow.close();
+    });
 
     var imgLetter = '';
 
@@ -74,6 +82,8 @@ function initialize(){
                     updateChangeLocation(marker.getPosition());
           });
       }
+
+      oms.addMarker(marker);
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
