@@ -77,14 +77,15 @@
 header{
 
 	width: 100%;
-	padding: 1em;
+	padding: 1em 0.5em;
 	height: @biggerHeight;
 	overflow: hidden;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 15;
-	background: black;
+	background: @charcoal;
+	border-bottom: 0.25em solid @focusColor;
 	-webkit-transition: height 0.25s;
 	-moz-transition: height 0.25s;
 	-ms-transition: height 0.25s;
@@ -95,7 +96,8 @@ header{
 		display: inline-block;
 		height: @biggerHeight;
 		line-height: @biggerHeight;
-		float: left;
+		//float: left;
+		.Center();
 		-webkit-transition: all 0.25s;
 		-moz-transition: all 0.25s;
 		-ms-transition: all 0.25s;
@@ -115,7 +117,10 @@ header{
 
 	p{
 		display: inline-block;
-		float: right;
+		float: left;
+		height: @biggerHeight;
+		line-height: @biggerHeight;
+		margin-top: -1.5em;
 	}
 
 }
@@ -127,6 +132,7 @@ header.smaller{
 	.logo{
 		height: @smallerHeight;
 		line-height: @smallerHeight;
+		float: left;
 	}
 
 	#big{
@@ -135,6 +141,11 @@ header.smaller{
 	}
 
 	#small{
+		height: @smallerHeight;
+		line-height: @smallerHeight;
+	}
+
+	p{
 		height: @smallerHeight;
 		line-height: @smallerHeight;
 	}
@@ -172,16 +183,9 @@ div#demo{
 	display: none;
 }
 
-div#header{
-
-	.Center();
-	background: @charcoal;
-
-	img{
-		height: 6em;
-		padding: 1.5em;
-	}
-
+div#headerSpace{
+	height: 6em;
+	padding: 1em 0.5em;
 }
 
 div#userForm{

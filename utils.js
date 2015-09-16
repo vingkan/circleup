@@ -54,7 +54,10 @@ function getDeviceIP() {
 
     for (i=0; hostipInfo.length >= i; i++) {
         ipAddress = hostipInfo[i].split(":");
-        if ( ipAddress[0] == "IP" ) return ipAddress[1];
+        if ( ipAddress[0] == "IP" ){
+        	document.getElementById('userID').innerHTML = ipAddress[1];
+        	return ipAddress[1];
+        }
     }
 
     return false;
@@ -72,7 +75,7 @@ function updateUserLocation(){
 function init() {
     window.addEventListener('scroll', function(e){
         var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-            shrinkOn = 300,
+            shrinkOn = 50,
             header = document.querySelector("header");
         if (distanceY > shrinkOn) {
             classie.add(header,"smaller");
