@@ -4,6 +4,14 @@ User.prototype.coordinates = {
 	'longitude': 0.0
 }; //Object of Doubles/Floats
 
+function User(data){
+	this.name = data['name'];
+	this.coordinates = {
+		'latitude': parseFloat(data['latitude']),
+		'longitude': parseFloat(data['longitude'])
+	};
+}
+
 User.prototype.getImgLetter = function(){
 	var imgLetter = null;
 	var firstChar = this.name.charAt(0).toLowerCase();
