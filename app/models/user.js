@@ -1,3 +1,4 @@
+User.prototype.id = ""; //String
 User.prototype.name = ""; //String
 User.prototype.coordinates = {
 	'latitude': 0.0,
@@ -5,6 +6,7 @@ User.prototype.coordinates = {
 }; //Object of Doubles/Floats
 
 function User(data){
+	this.id = data['id'];
 	this.name = data['name'];
 	this.coordinates = {
 		'latitude': parseFloat(data['latitude']),

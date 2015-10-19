@@ -12,3 +12,16 @@ function getUsers(){
 		loadUsers(users);
 	});
 }
+
+function addUsers(userArray){
+	var userDatabase = new Firebase('https://circleup.firebaseio.com/users');
+	for(var u = 0; u < userArray.length; u++){
+		var current = userArray[u];
+		userDatabase.push({
+			id: current.id,
+			name: current.name,
+			latitude: current.getLat(),
+			longitude: current.getLon()
+		});
+	}
+}
