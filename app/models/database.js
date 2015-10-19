@@ -8,10 +8,9 @@ function getUsers(){
 			var user = new User(childData);
 			user.id = key;
 			users.push(user);
-			console.log(user.getLat())
 		});
+		initGoogleMap(users);
 	});
-	return users;
 }
 
 function addUsers(userArray){
@@ -25,4 +24,11 @@ function addUsers(userArray){
 			longitude: current.getLon()
 		});
 	}
+}
+
+function updateUser(user){
+	var userDatabase = new Firebase('https://circleup.firebaseio.com/users');
+	userDatabase.child(user.id).update({
+		latitude: userLo
+	});
 }
