@@ -11,6 +11,7 @@ function updateCoords(position){
 navigator.geolocation.getCurrentPosition(updateCoords);
 
 function initGoogleMap(markerArray){
+	console.log('started');
 	var centerPoint = markerArray[0];
 	var mapProperties = {
 		//center: new google.maps.LatLng(userLocation.latitude, userLocation.longitude),
@@ -24,7 +25,7 @@ function initGoogleMap(markerArray){
 	var infoWindow = new google.maps.InfoWindow();
 	oms.addListener('click', function(marker, event){
 		infoWindow.setContent(marker.desc);
-		infoWindow.open(map, marker);
+		infoWindow.open(googleMap, marker);
 	});
 	oms.addListener('spiderify', function(markers){
 		infoWindow.close();
@@ -33,12 +34,15 @@ function initGoogleMap(markerArray){
 	for(var m = 0; m < markerArray.length; m++){
 		var current = markerArray[m];
 		var marker = new google.maps.Marker({
+			title: current.name,
+			map: googleMap,
 			position: {
 				lat: current.getLat(),
 				lng: current.getLon()
 			},
-			map: googleMap,
-			title: current.name
+			icon: 'style/markers/' + current.getImgLetter() + '.png',
+			animation: google.maps.Animation.DROP,
+			draggable: false
 		});
 		oms.addMarker(marker);
 	}
