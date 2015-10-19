@@ -11,7 +11,6 @@ function updateCoords(position){
 navigator.geolocation.getCurrentPosition(updateCoords);
 
 function initGoogleMap(markerArray){
-	console.log('started');
 	var centerPoint = markerArray[0];
 	var mapProperties = {
 		//center: new google.maps.LatLng(userLocation.latitude, userLocation.longitude),
