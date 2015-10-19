@@ -4,13 +4,14 @@ function getUsers(){
 	userDatabase.once('value', function(snapshot){
 		snapshot.forEach(function(childSnapshot){
 			var key = childSnapshot.key();
-			var childData = childData.val();
+			var childData = childSnapshot.val();
 			var user = new User(childData);
 			user.id = key;
 			users.push(user);
+			console.log(user.getLat())
 		});
-		loadUsers(users);
 	});
+	return users;
 }
 
 function addUsers(userArray){

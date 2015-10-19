@@ -6,7 +6,7 @@ User.prototype.coordinates = {
 }; //Object of Doubles/Floats
 
 function User(data){
-	this.id = data['id'];
+	this.id = null;
 	this.name = data['name'];
 	this.coordinates = {
 		'latitude': parseFloat(data['latitude']),
