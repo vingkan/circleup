@@ -29,6 +29,8 @@ function addUsers(userArray){
 function updateUser(user){
 	var userDatabase = new Firebase('https://circleup.firebaseio.com/users');
 	userDatabase.child(user.id).update({
-		latitude: userLo
+		latitude: userLocation.getLat(),
+		longitude: userLocation.getLon()
 	});
+	getUsers();
 }

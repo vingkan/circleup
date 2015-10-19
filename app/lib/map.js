@@ -5,6 +5,8 @@ var userLocation = new User({
 	longitude: 0
 });
 
+var mapUsers = [];
+
 function updateCoords(position){
 	userLocation.coordinates.latitude = position.coords.latitude;
 	userLocation.coordinates.longitude = position.coords.longitude;
@@ -46,5 +48,6 @@ function initGoogleMap(markerArray){
 			draggable: false
 		});
 		oms.addMarker(marker);
+		mapUsers.push(current);
 	}
 }
