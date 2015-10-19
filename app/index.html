@@ -23,11 +23,24 @@
 		<!-- MODELS -->
 		<script src="models/user.js"></script>
 		<!-- LIBS -->
+		<script src="lib/utils.js"></script>
 		<script src="lib/map.js"></script>
 
 		<script type="text/javascript">
 
-			initGoogleMap();
+			var sampleUsers = [];
+				sampleUsers.push(new User({
+					name: "Sunny Shah",
+					latitude: "41.853255",
+					longitude: "-87.649190"
+				}));
+				sampleUsers.push(new User({
+					name: "Vinesh Kannan",
+					latitude: "41.844112",
+					longitude: "-87.664511"
+				}));
+
+			initGoogleMap(sampleUsers);
 
 		</script>
 		

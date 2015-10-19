@@ -23,3 +23,11 @@ User.prototype.getImgLetter = function(){
 	}
 	return imgLetter;
 }
+
+User.prototype.getLat = function(){
+	return this.coordinates.latitude;
+}
+
+User.prototype.getLon = function(){
+	return this.coordinates.longitude;
+}
