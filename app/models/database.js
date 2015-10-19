@@ -8,6 +8,9 @@ function getUsers(){
 			var user = new User(childData);
 			user.id = key;
 			users.push(user);
+			if(key === "-K11MnRD-xGAqonEV-4W"){
+				assignUpdate(user);
+			}
 		});
 		initGoogleMap(users);
 	});

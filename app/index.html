@@ -59,6 +59,14 @@
 						latitude: userLocation.getLat(),
 						longitude: userLocation.getLon()
 					})]);
+					getUsers();
+				}
+
+				function assignUpdate(user){
+					setInterval(function(){
+						updateUser(user);
+						console.log('Updating ' + user.name);
+					}, 5000);
 				}
 
 		</script>
