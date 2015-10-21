@@ -29,6 +29,10 @@
 @biggerHeight: 2 * @smallFont;
 @smallerHeight: @smallFont;
 
+div.headerSpace{
+	height: @biggerHeight + (@smallFont * 0.25);
+}
+
 header{
 
 	width: 100vw;
@@ -40,7 +44,7 @@ header{
 	left: 0;
 	z-index: 15;
 	background: @charcoal;
-	border-bottom: (@smallFont * 0.5) solid @focusColor;
+	border-bottom: (@smallFont * 0.25) solid @focusColor;
 	-webkit-transition: height 0.25s;
 	-moz-transition: height 0.25s;
 	-ms-transition: height 0.25s;
