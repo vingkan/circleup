@@ -17,7 +17,7 @@ function updateCoords(position){
 
 var geoSuccess = function(position){
 	updateCoords(position);
-	console.log('watchPosition');
+	alert('watchPosition');
 }
 
 var geoError = function(){
@@ -26,8 +26,8 @@ var geoError = function(){
 
 var geoOptions = {
 	enableHighAccuracy: true,
-	maximumAge: 30000,
-	timeout: 5000
+	maximumAge: Infinity,
+	timeout: 0
 }
 
 var watchUser = navigator.geolocation.watchPosition(geoSuccess, geoError, geoOptions);
