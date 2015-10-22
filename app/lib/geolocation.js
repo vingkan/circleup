@@ -1,10 +1,8 @@
 var userLocation = new User({
 	id: null,
 	name: 'Local User',
-	coordinates = {
-		latitude: 0.0,
-		longitude: 0.0
-	}
+	latitude: 0,
+	longitude: 0
 });
 
 function updateCoords(position){
