@@ -23,12 +23,12 @@ function initGoogleMap(markerArray){
 
 	for(var m = 0; m < markerArray.length; m++){
 		var current = markerArray[m];
-		/*var markerIcon = {
+		var markerIcon = {
 			url: 'style/markers/' + current.getImgLetter() + '.png',
-			scaledSize: new google.maps.Size(125, 200),
+			scaledSize: new google.maps.Size(165, 250),
 			origin: new google.maps.Point(0, 0),
 			anchor: new google.maps.Point(0, 0)
-		};*/
+		};
 		var marker = new google.maps.Marker({
 			title: current.name,
 			map: googleMap,
@@ -36,7 +36,7 @@ function initGoogleMap(markerArray){
 				lat: current.getLat(),
 				lng: current.getLon()
 			},
-			icon: 'style/markers/' + current.getImgLetter() + '.png',
+			icon: markerIcon, //'style/markers/' + current.getImgLetter() + '.png',
 			animation: google.maps.Animation.DROP,
 			draggable: false
 		});
