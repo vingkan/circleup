@@ -1,10 +1,3 @@
-function assignUpdate(user){
-	setInterval(function(){
-		updateUser(user);
-		console.log('Updating ' + user.name);
-	}, 15000);
-}
-
 function getUsers(){
 	var users = [];
 	var userDatabase = new Firebase('https://circleup.firebaseio.com/users');
