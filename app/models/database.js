@@ -36,12 +36,13 @@ function addUsers(userArray){
 	}
 }
 
-function updateUser(user){
+function updateUser(user, geolocation){
+	var newLocation = geolocation || userLocation;
 	var userDatabase = new Firebase('https://circleup.firebaseio.com/users');
 	navigator.geolocation.getCurrentPosition(updateCoords);
 	userDatabase.child(user.id).update({
-		latitude: userLocation.getLat(),
-		longitude: userLocation.getLon()
+		latitude: newLocation.getLat(),
+		longitude: newLocation.getLon()
 	});
 	getUsers();
 }
