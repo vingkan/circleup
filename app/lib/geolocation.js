@@ -10,10 +10,10 @@ function updateCoords(position){
 	userLocation.coordinates.longitude = position.coords.longitude;
 }
 
-/*navigator.geolocation.getCurrentPosition(function(position){
+navigator.geolocation.getCurrentPosition(function(position){
 	updateCoords(position);
 	console.log('getCurrentPosition');
-});*/
+});
 
 var geoSuccess = function(position){
 	updateCoords(position);
@@ -22,11 +22,12 @@ var geoSuccess = function(position){
 
 var geoError = function(){
 	console.log('Error on geolocation position.');
+	alert('Error on geolocation position.');
 }
 
 var geoOptions = {
 	enableHighAccuracy: true,
-	maximumAge: Infinity,
+	maximumAge: 30000,
 	timeout: 0
 }
 
