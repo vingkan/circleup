@@ -9,8 +9,8 @@ function User(data){
 	this.id = null;
 	this.name = data['name'];
 	this.coordinates = {
-		'latitude': parseFloat(data['latitude']),
-		'longitude': parseFloat(data['longitude'])
+		latitude: parseFloat(data['latitude']),
+		longitude: parseFloat(data['longitude'])
 	};
 }
 

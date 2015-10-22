@@ -1,18 +1,4 @@
-var userLocation = new User({
-	id: null,
-	name: 'Local User',
-	latitude: 0,
-	longitude: 0
-});
-
 var mapUsers = [];
-
-function updateCoords(position){
-	userLocation.coordinates.latitude = position.coords.latitude;
-	userLocation.coordinates.longitude = position.coords.longitude;
-}
-
-navigator.geolocation.getCurrentPosition(updateCoords);
 
 function initGoogleMap(markerArray){
 	var centerPoint = markerArray[0];
