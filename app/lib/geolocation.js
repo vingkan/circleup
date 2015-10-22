@@ -10,4 +10,10 @@ function updateCoords(position){
 	userLocation.coordinates.longitude = position.coords.longitude;
 }
 
-navigator.geolocation.getCurrentPosition(updateCoords);
+navigator.geolocation.getCurrentPosition(function(position){
+	updateCoords(position);
+});
+
+var watchUser = navigator.geolocation.watchPosition(function(position){
+	updateCoords(position);
+});
