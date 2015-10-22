@@ -23,6 +23,12 @@ function initGoogleMap(markerArray){
 
 	for(var m = 0; m < markerArray.length; m++){
 		var current = markerArray[m];
+		/*var markerIcon = {
+			url: 'style/markers/' + current.getImgLetter() + '.png',
+			scaledSize: new google.maps.Size(125, 200),
+			origin: new google.maps.Point(0, 0),
+			anchor: new google.maps.Point(0, 0)
+		};*/
 		var marker = new google.maps.Marker({
 			title: current.name,
 			map: googleMap,
