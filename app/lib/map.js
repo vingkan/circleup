@@ -77,8 +77,10 @@ function addUserMarker(user){
 			infoWindow.open(googleMap, marker);*/
 		}
 	})(marker, markerCount));
-	googleMap.panTo({
-		lat: current.getLat(),
-		lng: current.getLon()
-	});
+	/*googleMap.panTo(
+		{
+			lat: current.getLat(),
+			lng: current.getLon()
+		}
+	);*/
 }
