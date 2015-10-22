@@ -2,6 +2,7 @@ var mapUsers = [];
 
 function initGoogleMap(markerArray){
 	var centerPoint = userLocation;
+	markerArray.push(userLocation);
 	var mapProperties = {
 		//center: new google.maps.LatLng(userLocation.latitude, userLocation.longitude),
 		center: new google.maps.LatLng(centerPoint.getLat(), centerPoint.getLon()),
