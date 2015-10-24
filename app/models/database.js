@@ -38,7 +38,7 @@ function addCurrentUser(){
 			latitude: userLocation.getLat(),
 			longitude: userLocation.getLon(),
 			accuracy: userLocation.getAccuracy(),
-			circles: JSON.stringify(current.circles)
+			circles: JSON.stringify(userLocation.circles)
 		})]);
 		getUsers();
 	}

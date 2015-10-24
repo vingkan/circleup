@@ -3,7 +3,8 @@ var userLocation = new User({
 	name: '$LocalUser',
 	latitude: 0,
 	longitude: 0,
-	accuracy: 0
+	accuracy: 0,
+	circles: null
 });
 
 function updateCoords(position){
