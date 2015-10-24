@@ -14,8 +14,8 @@
 
 			button{
 				position: fixed;
-				top: 30px;
-				left: 30px;
+				top: 0;
+				left: 0;
 				z-index: 10;
 			}
 
@@ -51,6 +51,15 @@
 				}));*/
 
 				getUsers();
+
+				//Constant Location for Testing
+				updateCoords({
+					coords: {
+						latitude: 41.853231,
+						longitude: -87.649223,
+						accuracy: 0
+					}
+				});
 
 		</script>
 		
