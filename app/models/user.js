@@ -2,8 +2,9 @@ User.prototype.id = ""; //String
 User.prototype.name = ""; //String
 User.prototype.timestamp = 0; //Date
 User.prototype.coordinates = {
-	'latitude': 0.0,
-	'longitude': 0.0
+	latitude: 0.0,
+	longitude: 0.0,
+	accuracy: 0.0
 }; //Object of Doubles/Floats
 User.prototype.circles = []; //Array of String IDs
 
@@ -16,6 +17,7 @@ function User(data){
 		longitude: parseFloat(data['longitude']),
 		accuracy: parseFloat(data['accuracy'])
 	};
+	//this.circles = JSON.parse(data['circles']);
 }
 
 User.prototype.getImgLetter = function(){
@@ -36,4 +38,8 @@ User.prototype.getLat = function(){
 
 User.prototype.getLon = function(){
 	return this.coordinates.longitude;
+}
+
+User.prototype.getAccuracy = function(){
+	return this.coordinates.accuracy;
 }

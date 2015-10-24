@@ -21,7 +21,9 @@ function addUsers(userArray){
 			id: current.id,
 			name: current.name,
 			latitude: current.getLat(),
-			longitude: current.getLon()
+			longitude: current.getLon(),
+			accuracy: current.getAccuracy(),
+			circles: JSON.stringify(current.circles)
 		});
 	}
 }
@@ -34,7 +36,9 @@ function addCurrentUser(){
 			id: null,
 			name: userName,
 			latitude: userLocation.getLat(),
-			longitude: userLocation.getLon()
+			longitude: userLocation.getLon(),
+			accuracy: userLocation.getAccuracy(),
+			circles: JSON.stringify(current.circles)
 		})]);
 		getUsers();
 	}
