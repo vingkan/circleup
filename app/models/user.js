@@ -5,6 +5,7 @@ User.prototype.coordinates = {
 	'latitude': 0.0,
 	'longitude': 0.0
 }; //Object of Doubles/Floats
+User.prototype.circles = []; //Array of String IDs
 
 function User(data){
 	this.id = null;
