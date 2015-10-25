@@ -7,6 +7,12 @@ function currentUserMarker(marker){
 	return userVerified;
 }
 
+function login(){
+	//var userEmail = document.getElementById('loginEmail');
+	var userEmail = 'jChiu@uic.edu';
+	userLocation.email = userEmail;
+}
+
 User.prototype.id = ""; //String
 User.prototype.name = ""; //String
 User.prototype.email = ""; //String
