@@ -12,12 +12,10 @@
 		<script src="lib/overlappingMarkerSpiderfier.js"></script>
 		<style>
 
-			/*button{
+			div#login{
 				position: fixed;
-				top: 0;
-				left: 0;
-				z-index: 10;
-			}*/
+				z-index: 50;
+			}
 
 		</style>
 	</head>
@@ -25,6 +23,12 @@
 
 		<div class="menu">
 			<button class="action" onclick="addCurrentUser();">Add Me!</button>
+		</div>
+
+		<div id="login">
+			<h2>Enter Your Email Address</h2>
+			<input type="text" id="loginEmail">
+			<button onclick="login()">Login</button>
 		</div>
 
 		<div id="googleMap"></div>

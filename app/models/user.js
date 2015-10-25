@@ -1,5 +1,10 @@
 function currentUserMarker(marker){
-	return true;
+	userVerified = false;
+	if(marker.email === userLocation.email){
+		userVerified = true;
+		console.log('verified: ' + marker.email + ' === ' + userLocation.email);
+	}
+	return userVerified;
 }
 
 User.prototype.id = ""; //String
