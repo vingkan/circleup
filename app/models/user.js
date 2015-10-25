@@ -60,3 +60,9 @@ User.prototype.getLon = function(){
 User.prototype.getAccuracy = function(){
 	return this.coordinates.accuracy;
 }
+
+User.prototype.setGeolocation = function(geolocation){
+	this.coordinates.latitude = geolocation.latitude;
+	this.coordinates.longitude = geolocation.longitude;
+	this.coordinates.accuracy = geolocation.accuracy;
+}
