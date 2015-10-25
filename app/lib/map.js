@@ -14,7 +14,9 @@ function initGoogleMap(markerArray){
 	};
 	var mapDiv = document.getElementById('googleMap');
 	googleMap = new google.maps.Map(mapDiv, mapProperties);
-	oms = new OverlappingMarkerSpiderfier(googleMap);
+	oms = new OverlappingMarkerSpiderfier(googleMap, {
+		circleFootSeparation: 100
+	});
 	var infoWindow = new google.maps.InfoWindow();
 	oms.addListener('click', function(marker, event){
 		infoWindow.setContent(marker.desc);
