@@ -30,7 +30,7 @@ function initGoogleMap(markerArray){
 			url: 'style/markers/' + current.getImgLetter() + '.png',
 			scaledSize: new google.maps.Size(82.5, 125),
 			origin: new google.maps.Point(0, 0),
-			anchor: new google.maps.Point(0, 0)
+			anchor: new google.maps.Point(41, 125)
 		};
 		var marker = new google.maps.Marker({
 			title: current.name,
@@ -41,7 +41,12 @@ function initGoogleMap(markerArray){
 			},
 			icon: markerIcon, //'style/markers/' + current.getImgLetter() + '.png',
 			animation: google.maps.Animation.DROP,
-			draggable: false
+			draggable: true
+		});
+		marker.addListener('dragend', function(marker, event){
+			console.log(marker)
+			console.log(marker.latLng.lat());
+			console.log(marker.latLng.lng());
 		});
 		oms.addMarker(marker);
 		mapUsers.push(current);
