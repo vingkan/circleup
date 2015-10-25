@@ -11,6 +11,7 @@ function login(){
 	//var userEmail = document.getElementById('loginEmail');
 	var userEmail = 'jChiu@uic.edu';
 	userLocation.email = userEmail;
+	getUsers();
 }
 
 User.prototype.id = ""; //String
