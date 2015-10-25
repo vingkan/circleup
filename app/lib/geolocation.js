@@ -1,6 +1,7 @@
 var userLocation = new User({
 	id: null,
 	name: '$LocalUser',
+	email: 'null',
 	latitude: 0,
 	longitude: 0,
 	accuracy: 0,

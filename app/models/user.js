@@ -19,7 +19,7 @@ function User(data){
 		longitude: parseFloat(data['longitude']),
 		accuracy: parseFloat(data['accuracy'])
 	};
-	//this.circles = JSON.parse(data['circles']);
+	this.circles = JSON.parse(data['circles']);
 }
 
 User.prototype.getImgLetter = function(){
