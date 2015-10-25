@@ -34,6 +34,10 @@ function initGoogleMap(markerArray){
 			origin: new google.maps.Point(0, 0),
 			anchor: new google.maps.Point(41, 125)
 		};
+		var draggableMarker = false;
+		if(currentUserMarker(current)){
+			draggableMarker = true;
+		}
 		var marker = new google.maps.Marker({
 			title: current.name,
 			map: googleMap,
@@ -43,17 +47,24 @@ function initGoogleMap(markerArray){
 			},
 			icon: markerIcon, //'style/markers/' + current.getImgLetter() + '.png',
 			animation: google.maps.Animation.DROP,
-			draggable: true
+			draggable: draggableMarker
 		});
-		marker.addListener('dragend', function(marker, event){
-			console.log(marker)
-			console.log(marker.latLng.lat());
-			console.log(marker.latLng.lng());
-		});
+		if(draggableMarker){
+			marker.addListener('dragend', function(marker, event){
+				updateMarkerPosition(marker, event);
+			});
+			draggableMarker = false;
+		}
 		oms.addMarker(marker);
 		mapUsers.push(current);
 		markerCount++;
 	}
+}
+
+function updateMarkerPosition(marker, event){
+	console.log(marker)
+	console.log(marker.latLng.lat());
+	console.log(marker.latLng.lng());
 }
 
 function addUserMarker(user){

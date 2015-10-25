@@ -14,10 +14,11 @@ function updateCoords(position){
 	userLocation.coordinates.accuracy = position.coords.accuracy;
 }
 
-navigator.geolocation.getCurrentPosition(function(position){
+//Turned off for Constant Location Testing
+/*navigator.geolocation.getCurrentPosition(function(position){
 	updateCoords(position);
 	console.log('getCurrentPosition');
-});
+});*/
 
 var geoSuccess = function(position){
 	updateCoords(position);

@@ -1,3 +1,7 @@
+function currentUserMarker(marker){
+	return true;
+}
+
 User.prototype.id = ""; //String
 User.prototype.name = ""; //String
 User.prototype.email = ""; //String
