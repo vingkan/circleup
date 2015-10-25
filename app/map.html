@@ -12,21 +12,22 @@
 		<script src="lib/overlappingMarkerSpiderfier.js"></script>
 		<style>
 
-			button{
+			/*button{
 				position: fixed;
 				top: 0;
 				left: 0;
 				z-index: 10;
-			}
+			}*/
 
 		</style>
 	</head>
 	<body>
 
+		<div class="menu">
+			<button class="action" onclick="addCurrentUser();">Add Me!</button>
+		</div>
 
 		<div id="googleMap"></div>
-
-		<button onclick="addCurrentUser();">Add Me!</button>
 		
 		<!-- MODELS -->
 		<script src="models/user.js"></script>
