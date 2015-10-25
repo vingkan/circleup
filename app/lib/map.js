@@ -62,9 +62,12 @@ function initGoogleMap(markerArray){
 }
 
 function updateMarkerPosition(marker, event){
-	console.log(marker)
-	console.log(marker.latLng.lat());
-	console.log(marker.latLng.lng());
+	var newPosition = {
+		latitude: marker.latLng.lat(),
+		longitude: marker.latLng.lng(),
+		accuracy: 100
+	}
+	updateUser(userLocation, newPosition);
 }
 
 function addUserMarker(user){

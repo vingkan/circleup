@@ -7,6 +7,10 @@ function getUsers(){
 			var childData = childSnapshot.val();
 			var user = new User(childData);
 			user.id = key;
+			if(user.email === userLocation.email){
+				userLocation.id = key;
+				console.log('User Key is: ' + key);
+			}
 			users.push(user);
 		});
 		initGoogleMap(users);
@@ -47,13 +51,18 @@ function addCurrentUser(){
 	}
 }
 
-function updateUser(user, geolocation){
-	var newLocation = geolocation || userLocation;
+function updateUser(user, position){
 	var userDatabase = new Firebase('https://circleup.firebaseio.com/users');
 	navigator.geolocation.getCurrentPosition(updateCoords);
+	var newLocation = position || userLocation.coordinates;
 	userDatabase.child(user.id).update({
-		latitude: newLocation.getLat(),
-		longitude: newLocation.getLon()
+		latitude: newLocation.latitude,
+		longitude: newLocation.longitude,
+		accuracy: newLocation.accuracy
 	});
-	getUsers();
+	//getUsers();
+}
+
+function pairUser(email){
+
 }
