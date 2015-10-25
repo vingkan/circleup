@@ -1,5 +1,6 @@
 User.prototype.id = ""; //String
 User.prototype.name = ""; //String
+User.prototype.email = ""; //String
 User.prototype.timestamp = 0; //Date
 User.prototype.coordinates = {
 	latitude: 0.0,
@@ -11,6 +12,7 @@ User.prototype.circles = []; //Array of String IDs
 function User(data){
 	this.id = null;
 	this.name = data['name'];
+	this.email = data['email'];
 	this.timestamp = data['timestamp'];
 	this.coordinates = {
 		latitude: parseFloat(data['latitude']),

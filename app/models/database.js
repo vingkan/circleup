@@ -20,6 +20,7 @@ function addUsers(userArray){
 		userDatabase.push({
 			id: current.id,
 			name: current.name,
+			email: current.email,
 			latitude: current.getLat(),
 			longitude: current.getLon(),
 			accuracy: current.getAccuracy(),
@@ -30,11 +31,13 @@ function addUsers(userArray){
 
 function addCurrentUser(){
 	var userName = prompt("What is your name?");
+	var emailAddress = prompt("What is your email address?");
 	if(userName != null){
 		navigator.geolocation.getCurrentPosition(updateCoords);
 		addUsers([new User({
 			id: null,
 			name: userName,
+			email: emailAddress,
 			latitude: userLocation.getLat(),
 			longitude: userLocation.getLon(),
 			accuracy: userLocation.getAccuracy(),
