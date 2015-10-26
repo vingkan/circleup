@@ -72,7 +72,8 @@ function updateMarkerPosition(marker, event){
 	updateUser(userLocation, newPosition);
 }
 
-function addUserMarker(user){
+function addUserMarker(user, allowEdits){
+	var draggable = allowEdits || false;
 	console.log(user)
 	var current = user;
 	var markerIcon = {
