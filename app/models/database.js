@@ -1,5 +1,6 @@
 function getUsers(){
 	var users = [];
+	var existingUser = false;
 	var userDatabase = new Firebase('https://circleup.firebaseio.com/users');
 	userDatabase.once('value', function(snapshot){
 		snapshot.forEach(function(childSnapshot){
@@ -10,9 +11,13 @@ function getUsers(){
 			if(user.email === userLocation.email){
 				userLocation.id = key;
 				console.log('User Key is: ' + key);
+				existingUser = true;
 			}
 			users.push(user);
 		});
+		if(!existingUser){
+			addCurrentUser();
+		}
 		initGoogleMap(users);
 	});
 }
