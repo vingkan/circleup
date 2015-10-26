@@ -160,13 +160,17 @@ div#shade{
 	top: 0;
 	left: 0;
 	display: none;
+	//Transitions
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
 }
 
 div.credentials{
 
 	background: white;
 	width: 90vw;
-	height: 92vh;
+	//height: 92vh;
+	height: 0vh;
 	border-top: 3vh solid @focusColor;
 	position: fixed;
 	bottom: 0;
@@ -202,9 +206,13 @@ div.credentials{
 	}
 
 	input{
+
+		background: rgb(100, 100, 100);
+
 		&:focus{
-			background: @charcoal;
+			background: @focusColor;
 		}
+
 	}
 
 	button{
@@ -217,6 +225,14 @@ div.credentials{
 			background-position: right bottom;
 		}
 
+	}
+
+	p.note{
+		width: 90%;
+		margin: 5%;
+		color: @charcoal;
+		font-size: 0.5 * @smallFont;
+		line-height: 0.75 * @smallFont;
 	}
 
 	transition: all 1s ease;

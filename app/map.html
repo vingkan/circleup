@@ -28,6 +28,7 @@
 			<h3>Enter Your Email Address</h3>
 			<input type="text" id="loginEmail">
 			<button onclick="login()">Login</button>
+			<p class="note">This is a working prototype of Circle Up that does not require user authentication. Anyone can edit your position on the map by logging in with your email address, but we assume that people have better things to do than move a little blue marker, so don't worry!</p>
 		</div>
 
 		<div id="googleMap"></div>
@@ -63,7 +64,12 @@
 					}
 				});
 
-				login();
+				initGoogleMap([]);
+
+				document.getElementById('shade').style.display = 'block';
+				document.getElementById('login').style.height = '92vh';
+
+				//login();
 
 		</script>
 		
