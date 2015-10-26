@@ -8,7 +8,7 @@ function getUsers(){
 			var childData = childSnapshot.val();
 			var user = new User(childData);
 			user.id = key;
-			if(user.email === userLocation.email){
+			if(user.email.toLowerCase() === userLocation.email.toLowerCase()){
 				userLocation.id = key;
 				console.log('User Key is: ' + key);
 				existingUser = true;
@@ -16,7 +16,7 @@ function getUsers(){
 			users.push(user);
 		});
 		if(!existingUser){
-			addCurrentUser();
+			toggleWindow('newUser');
 		}
 		initGoogleMap(users);
 	});
@@ -38,9 +38,9 @@ function addUsers(userArray){
 	}
 }
 
-function addCurrentUser(){
-	var userName = prompt("What is your name?");
-	var emailAddress = prompt("What is your email address?");
+function addCurrentUser(userName, emailAddress){
+	/*var userName = prompt("What is your name?");
+	var emailAddress = prompt("What is your email address?");*/
 	if(userName != null){
 		navigator.geolocation.getCurrentPosition(updateCoords);
 		addUsers([new User({

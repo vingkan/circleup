@@ -19,7 +19,7 @@ window.onload = initScrollingHeader();
 function toggleWindow(windowID){
 	var credentialWindow = document.getElementById(windowID);
 	var shade = document.getElementById('shade');
-	console.log(credentialWindow.style.height)
+	//console.log(credentialWindow.style.height)
 	if(credentialWindow.style.height == '92vh'){
 		credentialWindow.style.height = '0vh';
 		shade.style.display = 'none';

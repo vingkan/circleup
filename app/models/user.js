@@ -1,6 +1,6 @@
 function currentUserMarker(marker){
 	userVerified = false;
-	if(marker.email === userLocation.email){
+	if(marker.email.toLowerCase() === userLocation.email.toLowerCase()){
 		userVerified = true;
 		console.log('verified: ' + marker.email + ' === ' + userLocation.email);
 	}
@@ -13,7 +13,15 @@ function login(){
 	console.log(userEmail);
 	userLocation.email = userEmail;
 	getUsers();
-	toggleCredentialWindow('login');
+	toggleWindow('login');
+}
+
+function addNewUser(){
+	var newName = document.getElementById('newName').value;
+	userLocation.name = newName;
+	addCurrentUser(userLocation.name, userLocation.email);
+	getUsers();
+	toggleWindow('newUser');
 }
 
 User.prototype.id = ""; //String
