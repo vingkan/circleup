@@ -15,3 +15,17 @@ function initScrollingHeader(){
 }
 
 window.onload = initScrollingHeader();
+
+function toggleCredentialWindow(windowID){
+	var credentialWindow = document.getElementById(windowID);
+	var shade = document.getElementById('shade');
+	console.log(credentialWindow.style.height)
+	if(credentialWindow.style.height == '92vh'){
+		credentialWindow.style.height = '0vh';
+		shade.style.display = 'none';
+	}
+	else{
+		credentialWindow.style.height = '92vh';
+		shade.style.display = 'block';
+	}
+}

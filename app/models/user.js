@@ -13,6 +13,7 @@ function login(){
 	console.log(userEmail);
 	userLocation.email = userEmail;
 	getUsers();
+	toggleCredentialWindow('login');
 }
 
 User.prototype.id = ""; //String
