@@ -34,13 +34,13 @@ function toggleWindow(windowID){
 /*---> KEY BINDINGS <-------------------------*/
 /*--------------------------------------------*/
 
-$('loginEmail').keypress(function(event){
+$('#loginEmail').keypress(function(event){
 	if(event.keyCode == 13){
 		login();
 	}
 });
 
-$('newName').keypress(function(event){
+$('#newName').keypress(function(event){
 	if(event.keyCode == 13){
 		addNewUser();
 	}
