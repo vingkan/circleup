@@ -8,8 +8,9 @@ function currentUserMarker(marker){
 }
 
 function login(){
-	//var userEmail = document.getElementById('loginEmail');
-	var userEmail = 'jChiu@uic.edu';
+	var userEmail = document.getElementById('loginEmail').value;
+	//var userEmail = 'jChiu@uic.edu';
+	console.log(userEmail);
 	userLocation.email = userEmail;
 	getUsers();
 }
