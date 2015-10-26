@@ -29,3 +29,19 @@ function toggleWindow(windowID){
 		shade.style.display = 'block';
 	}
 }
+
+/*--------------------------------------------*/
+/*---> KEY BINDINGS <-------------------------*/
+/*--------------------------------------------*/
+
+$('loginEmail').keypress(function(event){
+	if(event.keyCode == 13){
+		login();
+	}
+});
+
+$('newName').keypress(function(event){
+	if(event.keyCode == 13){
+		addNewUser();
+	}
+});
