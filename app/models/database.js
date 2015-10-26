@@ -13,6 +13,7 @@ function getUsers(){
 				console.log('User Key is: ' + key);
 				existingUser = true;
 				user.setGeolocation(userLocation.coordinates);
+				updateUser(user, userLocation.coordinates);
 			}
 			users.push(user);
 		});
