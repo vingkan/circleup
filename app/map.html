@@ -21,7 +21,12 @@
 		<div id="shade"></div>
 
 		<div id="menu">
-			<button class="action" onclick="toggleWindow('login');">Login</button>
+			<button class="action" onclick="toggleWindow('login');">
+				Login
+			</button>
+			<button class="action" onclick="toggleWindow('redeye');">
+				<img class="icon" src="style/markers/redeye.png">
+			</button>
 			<!-- <button class="action" onclick="addCurrentUser();">Add Me!</button> -->
 		</div>
 
@@ -39,6 +44,11 @@
 			<button onclick="addNewUser();">Join</button>
 			<p class="note">If you entered your email incorrectly and would like to go back, click here.</p>
 			<button onclick="toggleWindow('newUser'); toggleWindow('login');">Back</button>
+		</div>
+
+		<div class="credentials" id="redeye">
+			<h3>Red Eye Contest!</h3>
+			<p class="note">It looks like this is your first time using Circle Up. Enter your name to create an account.</p>
 		</div>
 
 		<div id="googleMap"></div>
@@ -78,7 +88,7 @@
 				});*/
 
 				//initGoogleMap([userLocation]);
-				toggleWindow('login');
+				//toggleWindow('login');
 
 		</script>
 		
