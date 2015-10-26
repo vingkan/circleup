@@ -169,9 +169,10 @@ div.credentials{
 	height: 92vh;
 	border-top: 3vh solid @focusColor;
 	position: fixed;
-	top: 5vh;
+	bottom: 0;
 	left: 5vw;
 	z-index: 25;
+	box-shadow: 0 0 10vw black;
 
 	h3{
 		color: @focusColor;
@@ -182,15 +183,43 @@ div.credentials{
 		text-align: center;
 	}
 
-	input{
+	input, button{
+		background: @focusColor;
+		color: white;
 		font-family: @NewsCycle;
-		width: 86%;
+		width: 90%;
 		margin: 5%;
-		padding: 0 2%;
+		padding: 0 0;
 		height: 2 * @smallFont;
 		line-height: 2 * @smallFont;
 		font-size: @smallFont;
+		text-align: center;
 		margin: 5vw;
+		box-sizing: border-box;
+		//Transitions
+		transition: all 0.5s ease;
+		-webkit-transition: all 0.5s ease;
 	}
+
+	input{
+		&:focus{
+			background: @charcoal;
+		}
+	}
+
+	button{
+
+		background: linear-gradient(to right, @focusColor 50%, @charcoal 50%);
+		background-size: 200% 100%;
+		background-position: left bottom;
+
+		&:hover{
+			background-position: right bottom;
+		}
+
+	}
+
+	transition: all 1s ease;
+	-webkit-transition: all 1s ease;
 
 }

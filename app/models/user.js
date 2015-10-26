@@ -8,6 +8,7 @@ function currentUserMarker(marker){
 }
 
 function login(){
+	document.getElementById('shade').style.display = 'block';
 	//var userEmail = document.getElementById('loginEmail');
 	var userEmail = 'jChiu@uic.edu';
 	userLocation.email = userEmail;
