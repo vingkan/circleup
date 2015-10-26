@@ -21,7 +21,8 @@
 		<div id="shade"></div>
 
 		<div class="menu">
-			<button class="action" onclick="addCurrentUser();">Add Me!</button>
+			<button class="action" onclick="toggleWindow('login');">&#9738;</button>
+			<!-- <button class="action" onclick="addCurrentUser();">Add Me!</button> -->
 		</div>
 
 		<div class="credentials" id="login">
@@ -67,7 +68,7 @@
 					}
 				});
 
-				initGoogleMap([]);
+				initGoogleMap([userLocation]);
 
 				//login();
 

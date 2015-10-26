@@ -16,7 +16,7 @@ function initScrollingHeader(){
 
 window.onload = initScrollingHeader();
 
-function toggleCredentialWindow(windowID){
+function toggleWindow(windowID){
 	var credentialWindow = document.getElementById(windowID);
 	var shade = document.getElementById('shade');
 	console.log(credentialWindow.style.height)
