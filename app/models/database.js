@@ -12,6 +12,7 @@ function getUsers(){
 				userLocation.id = key;
 				console.log('User Key is: ' + key);
 				existingUser = true;
+				user.setGeolocation(userLocation.coordinates);
 			}
 			users.push(user);
 		});
@@ -66,8 +67,4 @@ function updateUser(user, position){
 		accuracy: newLocation.accuracy
 	});
 	//getUsers();
-}
-
-function pairUser(email){
-
 }

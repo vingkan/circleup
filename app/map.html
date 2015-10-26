@@ -34,10 +34,11 @@
 
 		<div class="credentials" id="newUser">
 			<h3>Enter Your Name</h3>
-			<p class="note">It looks like this is your first time using Circle Up. Enter your name to create an account with the email address you entered.</p>
+			<p class="note">It looks like this is your first time using Circle Up. Enter your name to create an account.</p>
 			<input type="text" id="newName">
 			<button onclick="addNewUser();">Join</button>
-
+			<p class="note">If you entered your email incorrectly and would like to go back, click here.</p>
+			<button onclick="toggleWindow('newUser'); toggleWindow('login');">Back</button>
 		</div>
 
 		<div id="googleMap"></div>
