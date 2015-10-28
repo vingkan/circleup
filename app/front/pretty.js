@@ -81,14 +81,15 @@ function loadingSequence(){
 		"Questioning the meaning of life",
 		"Planting easter eggs in the source code",
 		"Evaluating your life choices",
-		"Solving the RedEye sudoko puzzle"
+		"Solving the RedEye sudoko puzzle",
+		["rock", "paper", "scissors", "shoot"]
 	];
 
 	var usedMessages = [];
 
 	function getRandomLoadingMessage(){
 		var random = Math.floor(Math.random() * loadingMessages.length);
-		var message = loadingMessages[random] + ' . . .';
+		var message = loadingMessages[random];
 		usedMessages.push(message);
 		//console.log('Used: ' + message)
 		loadingMessages.splice(random, 1);
@@ -128,6 +129,7 @@ function loadingSequence(){
 	}
 
 	function runLoadingSequence(){
+		var increment = 500;
 		var loadingMessageSpace = document.getElementById('loadingMessage');
 		loadingMessageSpace.innerHTML = "";
 		var loadingPercentage = document.getElementById('loadingPercentage');
@@ -145,8 +147,17 @@ function loadingSequence(){
 		*/
 		var intervalID = window.setInterval(function(){
 			var message = getRandomLoadingMessage();
-			//console.log(message);
-			loadingMessageSpace.innerHTML = message;
+			if($.isArray(message)){
+				var subIncrement = increment / message.length;
+				var subMessage = 0;
+				setInterval(function(){
+					loadingMessageSpace.innerHTML = message[subMessage];
+					subMessage++;
+				}, subIncrement);
+			}
+			else{
+				loadingMessageSpace.innerHTML = message;
+			}
 			stillLoading = incrementLoadingDisplay();
 			if(!stillLoading){
 				clearInterval(intervalID);
@@ -154,7 +165,7 @@ function loadingSequence(){
 				//Replenish the message arrays
 				Array.prototype.push.apply(loadingMessages, usedMessages);
 			}
-		}, 500);
+		}, increment);
 	}
 
 	runLoadingSequence();
