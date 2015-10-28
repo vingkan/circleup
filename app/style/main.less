@@ -259,14 +259,15 @@ div#loading{
 
 	background: @charcoal;
 	width: 100vw;
-	height: 100vh;
+	height: 1000vh;
 	position: fixed;
 	z-index: 30;
 	top: 0;
 	left: 0;
 	display: block;
+	overflow-y: hidden;
 
-	p#loadingMessage, div.loadingWrapper{
+	p#loadingMessage, div#loadingWrapper{
 		width: 75vw;
 		margin: 0 auto;
 		padding: 0;
@@ -279,22 +280,23 @@ div#loading{
 	}
 
 	p#loadingMessage{
-		background: orange;
+		background: transparent;
 		height: 45vw;
 		margin-top: 12.5vw;
 	}
 
 
-	div.loadingWrapper{
+	div#loadingWrapper{
 
-		background: purple;
+		background: transparent;
 		height: 15vw;
+		margin-top: 5vw;
 		border: 2vw solid white;
 		overflow-x: hidden;
 
 		div#loadingBar{
-			@loadingTime: 10s;
-			background: blue;
+			@loadingTime: 0.75s;
+			background: url('blueDiagmonds.png');
 			height: 15vw;
 			width: 0vw;
 			//TRANSITION STYLES

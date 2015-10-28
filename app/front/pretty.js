@@ -93,14 +93,26 @@ function incrementLoadingDisplay(){
 }
 
 function loadingSequence(){
+	var loadingPanel = document.getElementById('loading');
+	loadingPanel.style.height = '100vh';
 	var display = document.getElementById('loadingBar');
 	display.style.width = 0 + 'vw';
 	var stillLoading = true;
 	var loadingMessageSpace = document.getElementById('loadingMessage');
-	while(stillLoading){
+	/*
+	* Replace the problematic setTimeout() inside the while loop with a
+	* setInterval() and break condition.
+	* Thanks to http://stackoverflow.com/questions/12996193/settimeout-inside-while-loop
+	* for leading me back from the world of browser crashes.
+	*/
+	var intervalID = window.setInterval(function(){
 		var message = getRandomLoadingMessage();
 		console.log(message);
 		loadingMessageSpace.innerHTML = message;
 		stillLoading = incrementLoadingDisplay();
-	}
+		if(!stillLoading){
+			clearInterval(intervalID);
+			loadingPanel.style.height = '0vh';
+		}
+	}, 750);
 }
