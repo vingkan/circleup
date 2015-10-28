@@ -82,18 +82,26 @@ function loadingSequence(){
 		"Planting easter eggs in the source code",
 		"Evaluating your life choices",
 		"Solving the RedEye sudoko puzzle",
-		["rock", "paper", "scissors", "shoot"]
+		("rock paper scissors shoot").split(" "),
+		("You just got rick-rolled").split(" "),
+		("Did you catch that one?").split(" ")
 	];
 
 	var usedMessages = [];
 
 	function getRandomLoadingMessage(){
-		var random = Math.floor(Math.random() * loadingMessages.length);
-		var message = loadingMessages[random];
-		usedMessages.push(message);
-		//console.log('Used: ' + message)
-		loadingMessages.splice(random, 1);
-		//console.log(loadingMessages);
+		var message = "";
+		if(loadingMessages.length > 0){
+			var random = Math.floor(Math.random() * loadingMessages.length);
+			message = loadingMessages[random];
+			usedMessages.push(message);
+			//console.log('Used: ' + message)
+			loadingMessages.splice(random, 1);
+			//console.log(loadingMessages);
+		}
+		else{
+			message = "All out of loading messages! Time to get a new phone";
+		}
 		return message;
 	}
 
@@ -110,8 +118,8 @@ function loadingSequence(){
 		var scale = 0.40; //Scale of display size
 		var inputWidth = loadedWidth; //Get DOM Width
 		var displayLoadedWidth = inputWidth / scale;
-		var max = 15;
-		var min = 5;
+		var max = 2;
+		var min = 1;
 		var random = Math.floor(Math.random() * (max - min)) + min;
 		displayLoadedWidth += random;
 		if(displayLoadedWidth >= 100){
@@ -148,15 +156,22 @@ function loadingSequence(){
 		var intervalID = window.setInterval(function(){
 			var message = getRandomLoadingMessage();
 			if($.isArray(message)){
-				var subIncrement = increment / message.length;
+				var subIncrement = Math.floor(increment / message.length);
 				var subMessage = 0;
-				setInterval(function(){
-					loadingMessageSpace.innerHTML = message[subMessage];
-					subMessage++;
+				var subMessageInterval = setInterval(function(){
+					if(subMessage >= message.length){
+						clearInterval(subMessageInterval);
+					}
+					else{
+						loadingMessageSpace.innerHTML = message[subMessage] + ' . . .';
+						//console.log('POSTED: ' + message[subMessage] + ' . . .')
+						subMessage++;
+					}
 				}, subIncrement);
 			}
 			else{
-				loadingMessageSpace.innerHTML = message;
+				loadingMessageSpace.innerHTML = message + ' . . .';
+				//console.log('POSTED: ' + message + ' . . .')
 			}
 			stillLoading = incrementLoadingDisplay();
 			if(!stillLoading){
