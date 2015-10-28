@@ -92,9 +92,6 @@ function incrementLoadingDisplay(){
 	return stillLoading;
 }
 
-	var display = document.getElementById('loadingBar');
-	display.style.width = 0 + 'vw';
-
 function loadingSequence(){
 	var display = document.getElementById('loadingBar');
 	display.style.width = 0 + 'vw';

@@ -290,16 +290,16 @@ div#loading{
 		background: purple;
 		height: 15vw;
 		border: 2vw solid white;
+		overflow-x: hidden;
 
 		div#loadingBar{
-
+			@loadingTime: 10s;
 			background: blue;
 			height: 15vw;
-			width: 60vw;
+			width: 0vw;
 			//TRANSITION STYLES
-			transition: all 0.5s ease;
-			-webkit-transition: all 0.5s ease;
-
+			transition: all @loadingTime ease;
+			-webkit-transition: all @loadingTime ease;
 		}
 
 	}
