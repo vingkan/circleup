@@ -51,13 +51,27 @@ $('#newName').keypress(function(event){
 /*--------------------------------------------*/
 
 var loadingMessages = [
-	"Calculating the number of radians in a circle...",
-	"Locating fire hydrants..."
+	"Calculating the number of radians in a circle",
+	"Locating fire hydrants",
+	"Tasting the local cuisine",
+	"Telling you a joke",
+	"Firing up firebase",
+	"Hoping for good weather",
+	"Dropping out of college for this startup",
+	"Rolling the dice",
+	"Making up more loading messages",
+	"Deleting FOIA requests",
+	"Disrupting Uber's market",
+	"Uploading dank memes to the cloud",
+	"Switching latitude and longitude",
+	"Gently brushing your GPS",
+	"Checking out the cute guys on street view",
+	"Searching for Chipotle locations"
 ];
 
 function getRandomLoadingMessage(){
 	var random = Math.floor(Math.random() * loadingMessages.length);
-	var message = loadingMessages[random];
+	var message = loadingMessages[random] + '...';
 	return message;
 }
 
