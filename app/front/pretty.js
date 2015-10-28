@@ -74,12 +74,13 @@ function incrementLoadingDisplay(){
 	var scale = 0.75; //Scale of display size
 	var inputWidth = loadedWidth; //Get DOM Width
 	var displayLoadedWidth = inputWidth / scale;
-	var max = 20;
-	var min = 10;
+	var max = 15;
+	var min = 5;
 	var random = Math.floor(Math.random() * (max - min)) + min;
 	displayLoadedWidth += random;
-	if(displayLoadedWidth > 100){
+	if(displayLoadedWidth >= 100){
 		stillLoading = false;
+		displayLoadedWidth = 100;
 	}
 	var outputWidth = displayLoadedWidth * scale;
 	//Set style to new displayLoadedWidth
@@ -113,5 +114,5 @@ function loadingSequence(){
 			clearInterval(intervalID);
 			loadingPanel.style.height = '0vh';
 		}
-	}, 750);
+	}, 500);
 }
