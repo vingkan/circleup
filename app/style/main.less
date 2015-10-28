@@ -249,3 +249,50 @@ div.credentials{
 	-webkit-transition: all 1s ease;
 
 }
+
+/*--------------------------------------------*/
+/*---> LOADING <------------------------------*/
+/*--------------------------------------------*/
+
+
+div#loading{
+
+	background: @charcoal;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: 30;
+	top: 0;
+	left: 0;
+	display: block;
+
+	p#loadingMessage, div.loadingWrapper{
+		width: 75vw;
+		margin: 0 auto;
+		padding: 0;
+		//TEXT STYLES
+	}
+
+	p#loadingMessage{
+		background: orange;
+		height: 60vw;
+	}
+
+
+	div.loadingWrapper{
+
+		background: purple;
+		height: 15vw;
+		border: 2vw solid white;
+
+		div#loadingBar{
+
+			background: blue;
+			height: 15vw;
+			width: 60vw;
+
+		}
+
+	}
+
+}
