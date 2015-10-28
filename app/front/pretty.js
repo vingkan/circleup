@@ -89,7 +89,7 @@ function incrementLoadingDisplay(){
 
 function loadingSequence(){
 	var display = document.getElementById('loadingBar');
-	display.style.Width = '0vw';
+	display.style.width = '0vw';
 	var stillLoading = true;
 	var loadingMessageSpace = document.getElementById('loadingMessage');
 	while(stillLoading){
