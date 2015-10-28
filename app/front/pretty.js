@@ -73,7 +73,7 @@ function incrementLoadingDisplay(){
 	var display = document.getElementById('loadingBar');
 	var width = display.style.width;
 	var loadedWidth = getValueFromUnit(display.style.width);
-	var scale = 75; //Scale of display size
+	var scale = 0.75; //Scale of display size
 	var inputWidth = loadedWidth; //Get DOM Width
 	var displayLoadedWidth = inputWidth / scale;
 	var max = 20;
@@ -85,11 +85,15 @@ function incrementLoadingDisplay(){
 	}
 	var outputWidth = displayLoadedWidth * scale;
 	//Set style to new displayLoadedWidth
-	//display.style.width = outputWidth + 'vw';
+	console.log(outputWidth + 'vw')
+	display.style.width = outputWidth + 'vw';
 	//loadedWidth = outputWidth;
 	console.log('Incrementing: ' + displayLoadedWidth + '%');
 	return stillLoading;
 }
+
+	var display = document.getElementById('loadingBar');
+	display.style.width = 0 + 'vw';
 
 function loadingSequence(){
 	var display = document.getElementById('loadingBar');
