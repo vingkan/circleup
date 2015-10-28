@@ -66,8 +66,6 @@ function getValueFromUnit(unit){
 	return parseFloat(value);
 }
 
-//var loadedWidth = 0;
-
 function incrementLoadingDisplay(){
 	var stillLoading = true;
 	var display = document.getElementById('loadingBar');
@@ -85,10 +83,11 @@ function incrementLoadingDisplay(){
 	}
 	var outputWidth = displayLoadedWidth * scale;
 	//Set style to new displayLoadedWidth
-	console.log(outputWidth + 'vw')
 	display.style.width = outputWidth + 'vw';
-	//loadedWidth = outputWidth;
-	console.log('Incrementing: ' + displayLoadedWidth + '%');
+	var loadingPercentage = document.getElementById('loadingPercentage');
+	var percentage = displayLoadedWidth + '%';
+	console.log('Incrementing: ' + percentage);
+	loadingPercentage.innerHTML = percentage;
 	return stillLoading;
 }
 
