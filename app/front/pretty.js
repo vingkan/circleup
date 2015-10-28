@@ -57,5 +57,35 @@ var loadingMessages = [
 
 function getRandomLoadingMessage(){
 	var random = Math.floor(Math.random() * loadingMessages.length);
-	console.log(random);
+	var message = loadingMessages[random];
+	return message;
+}
+
+var loadedWidth = 0;
+
+function incrementLoadingDisplay(){
+	var stillLoading = true;
+	var scale = 1; //Scale of display size
+	var inputWidth = loadedWidth; //Get DOM Width
+	var displayLoadedWidth = inputWidth / scale;
+	var max = 20;
+	var min = 10;
+	var random = Math.floor(Math.random() * (max - min)) + min;
+	displayLoadedWidth += random;
+	if(displayLoadedWidth > 100){
+		stillLoading = false;
+	}
+	var outputWidth = displayLoadedWidth * scale;
+	//Set style to new displayLoadedWidth;
+	loadedWidth = outputWidth;
+	console.log('Incrementing: ' + displayLoadedWidth + '%');
+	return stillLoading;
+}
+
+function loadingSequence(){
+	var stillLoading = true;
+	while(stillLoading){
+		console.log(getRandomLoadingMessage());
+		stillLoading = incrementLoadingDisplay();
+	}
 }
