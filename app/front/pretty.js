@@ -69,7 +69,14 @@ function loadingSequence(){
 		"Switching latitude and longitude",
 		"Gently brushing your GPS",
 		"Checking out the cute guys on street view",
-		"Searching for Chipotle locations"
+		"Searching for Chipotle locations",
+		"Deleting Comic Sans MS",
+		"Raising startup capital",
+		"Commenting out bad code",
+		"Twerking",
+		"Running for President",
+		"Delaying the singularity",
+		"Routing to the nearest bathroom"
 	];
 
 	var usedMessages = [];
