@@ -76,7 +76,12 @@ function loadingSequence(){
 		"Twerking",
 		"Running for President",
 		"Delaying the singularity",
-		"Routing to the nearest bathroom"
+		"Routing to the nearest bathroom",
+		"Assigning absurd variable names",
+		"Questioning the meaning of life",
+		"Planting easter eggs in the source code",
+		"Evaluating your life choices",
+		"Solving the RedEye sudoko puzzle"
 	];
 
 	var usedMessages = [];
