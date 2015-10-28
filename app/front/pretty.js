@@ -71,7 +71,7 @@ function incrementLoadingDisplay(){
 	var display = document.getElementById('loadingBar');
 	var width = display.style.width;
 	var loadedWidth = getValueFromUnit(display.style.width);
-	var scale = 0.75; //Scale of display size
+	var scale = 0.40; //Scale of display size
 	var inputWidth = loadedWidth; //Get DOM Width
 	var displayLoadedWidth = inputWidth / scale;
 	var max = 15;
@@ -84,9 +84,9 @@ function incrementLoadingDisplay(){
 	}
 	var outputWidth = displayLoadedWidth * scale;
 	//Set style to new displayLoadedWidth
-	display.style.width = outputWidth + 'vw';
+	display.style.width = outputWidth + 'vh';
 	var loadingPercentage = document.getElementById('loadingPercentage');
-	var percentage = displayLoadedWidth + '%';
+	var percentage = Math.floor(displayLoadedWidth) + '%';
 	//console.log('Incrementing: ' + percentage);
 	loadingPercentage.innerHTML = percentage;
 	return stillLoading;
@@ -98,7 +98,7 @@ function loadingSequence(){
 	var loadingPanel = document.getElementById('loading');
 	loadingPanel.style.height = '100vh';
 	var display = document.getElementById('loadingBar');
-	display.style.width = 0 + 'vw';
+	display.style.width = 0 + 'vh';
 	var stillLoading = true;
 	var loadingMessageSpace = document.getElementById('loadingMessage');
 	/*
