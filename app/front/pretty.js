@@ -87,12 +87,14 @@ function incrementLoadingDisplay(){
 	display.style.width = outputWidth + 'vw';
 	var loadingPercentage = document.getElementById('loadingPercentage');
 	var percentage = displayLoadedWidth + '%';
-	console.log('Incrementing: ' + percentage);
+	//console.log('Incrementing: ' + percentage);
 	loadingPercentage.innerHTML = percentage;
 	return stillLoading;
 }
 
 function loadingSequence(){
+	var loadingPercentage = document.getElementById('loadingPercentage');
+	var percentage = 0 + '%';
 	var loadingPanel = document.getElementById('loading');
 	loadingPanel.style.height = '100vh';
 	var display = document.getElementById('loadingBar');
@@ -107,7 +109,7 @@ function loadingSequence(){
 	*/
 	var intervalID = window.setInterval(function(){
 		var message = getRandomLoadingMessage();
-		console.log(message);
+		//console.log(message);
 		loadingMessageSpace.innerHTML = message;
 		stillLoading = incrementLoadingDisplay();
 		if(!stillLoading){
