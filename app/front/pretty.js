@@ -61,14 +61,18 @@ function getRandomLoadingMessage(){
 	return message;
 }
 
+function getValueFromUnit(unit){
+	var value = unit.substr(0, (unit.length - 2));
+	return parseFloat(value);
+}
+
 //var loadedWidth = 0;
 
 function incrementLoadingDisplay(){
 	var stillLoading = true;
 	var display = document.getElementById('loadingBar');
-	var loadedWidth = parseFloat(display.style.Width);
-	console.log(display.style.Width);
-	console.log(loadedWidth);
+	var width = display.style.width;
+	var loadedWidth = getValueFromUnit(display.style.width);
 	var scale = 75; //Scale of display size
 	var inputWidth = loadedWidth; //Get DOM Width
 	var displayLoadedWidth = inputWidth / scale;
@@ -81,7 +85,7 @@ function incrementLoadingDisplay(){
 	}
 	var outputWidth = displayLoadedWidth * scale;
 	//Set style to new displayLoadedWidth
-	display.style.width = outputWidth + 'vw';
+	//display.style.width = outputWidth + 'vw';
 	//loadedWidth = outputWidth;
 	console.log('Incrementing: ' + displayLoadedWidth + '%');
 	return stillLoading;
@@ -89,7 +93,7 @@ function incrementLoadingDisplay(){
 
 function loadingSequence(){
 	var display = document.getElementById('loadingBar');
-	display.style.width = '0vw';
+	display.style.width = 0 + 'vw';
 	var stillLoading = true;
 	var loadingMessageSpace = document.getElementById('loadingMessage');
 	while(stillLoading){
