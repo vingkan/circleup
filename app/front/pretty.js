@@ -49,3 +49,13 @@ $('#newName').keypress(function(event){
 /*--------------------------------------------*/
 /*---> LOADING <------------------------------*/
 /*--------------------------------------------*/
+
+var loadingMessages = [
+	"Calculating the number of radians in a circle...",
+	"Locating fire hydrants..."
+];
+
+function getRandomLoadingMessage(){
+	var random = Math.floor(Math.random() * loadingMessages.length);
+	console.log(random);
+}
