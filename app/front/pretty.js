@@ -61,11 +61,15 @@ function getRandomLoadingMessage(){
 	return message;
 }
 
-var loadedWidth = 0;
+//var loadedWidth = 0;
 
 function incrementLoadingDisplay(){
 	var stillLoading = true;
-	var scale = 1; //Scale of display size
+	var display = document.getElementById('loadingBar');
+	var loadedWidth = parseFloat(display.style.Width);
+	console.log(display.style.Width);
+	console.log(loadedWidth);
+	var scale = 75; //Scale of display size
 	var inputWidth = loadedWidth; //Get DOM Width
 	var displayLoadedWidth = inputWidth / scale;
 	var max = 20;
@@ -76,16 +80,22 @@ function incrementLoadingDisplay(){
 		stillLoading = false;
 	}
 	var outputWidth = displayLoadedWidth * scale;
-	//Set style to new displayLoadedWidth;
-	loadedWidth = outputWidth;
+	//Set style to new displayLoadedWidth
+	display.style.width = outputWidth + 'vw';
+	//loadedWidth = outputWidth;
 	console.log('Incrementing: ' + displayLoadedWidth + '%');
 	return stillLoading;
 }
 
 function loadingSequence(){
+	var display = document.getElementById('loadingBar');
+	display.style.Width = '0vw';
 	var stillLoading = true;
+	var loadingMessageSpace = document.getElementById('loadingMessage');
 	while(stillLoading){
-		console.log(getRandomLoadingMessage());
+		var message = getRandomLoadingMessage();
+		console.log(message);
+		loadingMessageSpace.innerHTML = message;
 		stillLoading = incrementLoadingDisplay();
 	}
 }
