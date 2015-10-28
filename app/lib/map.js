@@ -4,6 +4,8 @@ var mapUsers = [];
 var markerCount = 0;
 
 function initGoogleMap(markerArray){
+	//Seems like a good temporary location for this function call
+	loadingSequence();
 	var centerPoint = userLocation;
 	//markerArray.push(userLocation);
 	var mapProperties = {
