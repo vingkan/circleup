@@ -98,7 +98,7 @@ function loadingSequence(){
 			var random = Math.floor(Math.random() * loadingMessages.length);
 			message = loadingMessages[random];
 			if($.isArray(lastMessage)){
-				console.log("was the last a burst? " + $.isArray(lastMessage))
+				//console.log("was the last a burst? " + $.isArray(lastMessage))
 				var tryCounter = 1;
 				var found = false;
 				while($.isArray(message)){
@@ -120,7 +120,7 @@ function loadingSequence(){
 					usedMessages.push(message);
 					loadingMessages.splice(random, 1);
 				}
-				console.log('replace with: ' + message)
+				//console.log('replace with: ' + message)
 			}
 			else{
 				usedMessages.push(message);

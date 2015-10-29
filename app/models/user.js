@@ -53,7 +53,7 @@ function User(data){
 	};
 	this.circles = JSON.parse(data['circles']);
 	//THING DATA INSTANTIATION
-	var userIsThing = Boolean(data['isThing']);
+	var userIsThing = data['isThing'];
 	console.log(userIsThing);
 	if(userIsThing){
 		this.thing = {
@@ -62,7 +62,7 @@ function User(data){
 		}		
 	}
 	else{
-		this.isThing = {
+		this.thing = {
 			isThing: userIsThing,
 			type: "user"
 		}
