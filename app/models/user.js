@@ -36,6 +36,10 @@ User.prototype.coordinates = {
 	accuracy: 0.0
 }; //Object of Doubles/Floats
 User.prototype.circles = []; //Array of String IDs
+User.prototype.thing = {
+	isThing: false,
+	type: null
+}; //Object with Thing Data
 
 function User(data){
 	this.id = null;
@@ -48,6 +52,21 @@ function User(data){
 		accuracy: parseFloat(data['accuracy'])
 	};
 	this.circles = JSON.parse(data['circles']);
+	//THING DATA INSTANTIATION
+	var userIsThing = Boolean(data['isThing']);
+	console.log(userIsThing);
+	if(userIsThing){
+		this.thing = {
+			isThing: userIsThing,
+			type: data['type']
+		}		
+	}
+	else{
+		this.isThing = {
+			isThing: userIsThing,
+			type: "user"
+		}
+	}
 }
 
 User.prototype.getImgLetter = function(){
