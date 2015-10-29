@@ -38,7 +38,8 @@ User.prototype.coordinates = {
 User.prototype.circles = []; //Array of String IDs
 User.prototype.thing = {
 	isThing: false,
-	type: null
+	type: null,
+	icon: null,
 }; //Object with Thing Data
 
 function User(data){
@@ -54,11 +55,11 @@ function User(data){
 	this.circles = JSON.parse(data['circles']);
 	//THING DATA INSTANTIATION
 	var userIsThing = data['isThing'];
-	console.log(userIsThing);
 	if(userIsThing){
 		this.thing = {
 			isThing: userIsThing,
-			type: data['type']
+			type: data['type'],
+			icon: data['icon']
 		}		
 	}
 	else{
@@ -71,14 +72,23 @@ function User(data){
 
 User.prototype.getImgLetter = function(){
 	var imgLetter = null;
-	var firstChar = this.name.charAt(0).toLowerCase();
-	if(isLetter(firstChar)){
-		imgLetter = firstChar;
+	if(!this.isThing()){
+		var firstChar = this.name.charAt(0).toLowerCase();
+		if(isLetter(firstChar)){
+			imgLetter = firstChar;
+		}
+		else{
+			imgLetter = 'etc';
+		}
 	}
 	else{
-		imgLetter = 'etc';
+		imgLetter = this.thing.icon;
 	}
 	return imgLetter;
+}
+
+User.prototype.isThing = function(){
+	return this.thing.isThing;
 }
 
 User.prototype.getLat = function(){
