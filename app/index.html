@@ -93,6 +93,12 @@
 					longitude: "-87.664511"
 				}));*/
 
+				//Turned off for Constant Location Testing
+				navigator.geolocation.getCurrentPosition(function(position){
+					updateCoords(position);
+					console.log('getCurrentPosition');
+				});
+
 				//Constant Location for Testing
 				/*updateCoords({
 					coords: {
