@@ -165,7 +165,7 @@ function loadingSequence(){
 	}
 
 	function runLoadingSequence(){
-		var increment = 500;
+		var increment = 250;
 		var loadingMessageSpace = document.getElementById('loadingMessage');
 		loadingMessageSpace.innerHTML = "";
 		var loadingPercentage = document.getElementById('loadingPercentage');

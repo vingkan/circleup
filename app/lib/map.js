@@ -10,6 +10,7 @@ function initGoogleMap(markerArray){
 		//center: new google.maps.LatLng(userLocation.latitude, userLocation.longitude),
 		center: new google.maps.LatLng(centerPoint.getLat(), centerPoint.getLon()),
 		zoom: 18,
+		//zoom: 22,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	var mapDiv = document.getElementById('googleMap');

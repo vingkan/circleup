@@ -35,7 +35,10 @@
 				<button class="action" onclick="toggleWindow('login');" style="width: auto; padding: 0 2vh;">
 					Login
 				</button>
-				<button class="action" onclick="toggleWindow('redeye');">
+				<!-- <button class="action" onclick="toggleWindow('redeye');">
+					<img class="icon" src="style/markers/redeye.png">
+				</button> -->
+				<button class="action" onclick="redEyeDemo();">
 					<img class="icon" src="style/markers/redeye.png">
 				</button>
 			</center>
@@ -94,26 +97,35 @@
 				}));*/
 
 				//Turned off for Constant Location Testing
-				navigator.geolocation.getCurrentPosition(function(position){
+				/*navigator.geolocation.getCurrentPosition(function(position){
 					updateCoords(position);
 					console.log('getCurrentPosition');
-				});
+				});*/
 
 				//Constant Location for Testing
-				/*updateCoords({
+				updateCoords({
 					coords: {
-						latitude: 41.853231,
-						longitude: -87.649223,
+						latitude: 41.888828,
+						longitude: -87.650546,
 						accuracy: 0
 					}
-				});*/
+				});
 
 				//initGoogleMap([userLocation]);
 				toggleWindow('login');
 
 				//Temporary Automatic Login Sequence
-				document.getElementById('loginEmail').value = "vkannan@imsa.edu";
-				login();
+				/*document.getElementById('loginEmail').value = "vkannan@imsa.edu";
+				login();*/
+
+				function redEyeDemo(){
+					var thing = createThing({
+						name: "SSV South Red Eye Box",
+						type: "redeyebox",
+						icon: "redeye"
+					});
+					addThing(thing);
+				}
 
 		</script>
 		
