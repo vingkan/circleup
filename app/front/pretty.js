@@ -146,8 +146,8 @@ function loadingSequence(){
 		var scale = 0.40; //Scale of display size
 		var inputWidth = loadedWidth; //Get DOM Width
 		var displayLoadedWidth = inputWidth / scale;
-		var max = 15;
-		var min = 5;
+		var max = 30;
+		var min = 20;
 		var random = Math.floor(Math.random() * (max - min)) + min;
 		displayLoadedWidth += random;
 		if(displayLoadedWidth >= 100){
@@ -165,7 +165,7 @@ function loadingSequence(){
 	}
 
 	function runLoadingSequence(){
-		var increment = 250;
+		var increment = 500;
 		var loadingMessageSpace = document.getElementById('loadingMessage');
 		loadingMessageSpace.innerHTML = "";
 		var loadingPercentage = document.getElementById('loadingPercentage');
