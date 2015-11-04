@@ -22,7 +22,8 @@ function initGoogleMap(markerArray){
 	});
 	var infoWindow = new google.maps.InfoWindow();
 	oms.addListener('click', function(marker, event){
-		infoWindow.setContent(marker.desc);
+		//infoWindow.setContent(marker.desc);
+		infoWindow.setContent(current.name + "hello");
 		infoWindow.open(googleMap, marker);
 	});
 	oms.addListener('spiderify', function(markers){
