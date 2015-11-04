@@ -3,6 +3,8 @@ var oms;
 var mapUsers = [];
 var markerCount = 0;
 
+var mapMarkerArray = [];
+
 function initGoogleMap(markerArray){
 	var centerPoint = userLocation;
 	//markerArray.push(userLocation);
@@ -59,6 +61,7 @@ function initGoogleMap(markerArray){
 			currentUser = false;
 		}
 		oms.addMarker(marker);
+		mapMarkerArray.push(marker);
 		mapUsers.push(current);
 		markerCount++;
 	}

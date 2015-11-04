@@ -211,6 +211,6 @@ function loadingSequence(){
 		}, increment);
 	}
 
-	runLoadingSequence();
+	//runLoadingSequence();
 
 }
