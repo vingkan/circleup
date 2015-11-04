@@ -61,7 +61,6 @@ function initGoogleMap(markerArray){
 			currentUser = false;
 		}
 		oms.addMarker(marker);
-		mapMarkerArray.push(marker);
 		mapUsers.push(current);
 		markerCount++;
 	}

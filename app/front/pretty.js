@@ -1,4 +1,4 @@
-function initScrollingHeader(){
+/*function initScrollingHeader(){
 	window.addEventListener('scroll', function(event){
 		var distanceY = window.pageYOffset || document.documentElement.scrollTop,
 			shrinkOn = 50,
@@ -14,7 +14,7 @@ function initScrollingHeader(){
 	});
 }
 
-window.onload = initScrollingHeader();
+window.onload = initScrollingHeader();*/
 
 function toggleWindow(windowID){
 	var credentialWindow = document.getElementById(windowID);
